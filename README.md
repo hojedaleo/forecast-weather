@@ -16,3 +16,5 @@ Milestone 3: Analytics & Forecasting
 - Medallion Architecture: structured data into Bronze (Raw), Silver (Cleaned), and Gold (Aggregated) layers using BigQuery Views.
 - Machine Learning: Trained an ARIMA_PLUS model directly in BigQuery using SQL to forecast temperature trends for the next 15 days.
 - Dashboard: Built a live Looker Studio dashboard connected to the Gold layer.
+
+dashboard: https://lookerstudio.google.com/s/tRP2RIU2aGo
