@@ -2,9 +2,8 @@ import functions_framework
 import requests
 from google.cloud import bigquery
 from datetime import datetime, timedelta
-import os
 
-PROJECT_ID = os.environ.get("GCP_PROJECT")
+PROJECT_ID = "weather-toronto-forecast"
 DATASET_ID = "weather_data_prod"
 TABLE_ID = "toronto_daily_weather"
 FULL_TABLE_ID = f"{PROJECT_ID}.{DATASET_ID}.{TABLE_ID}"
@@ -39,7 +38,7 @@ def daily_ingest(request):
     }]
 
     errors = client.insert_rows_json(FULL_TABLE_ID, row_to_insert)
-    
+
     if errors == []:
         return f"Success: Loaded data for {yesterday_str}", 200
     else:
